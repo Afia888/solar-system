@@ -20,6 +20,7 @@ Features
 - Real-time animation (60 FPS)
   
 🚀 Quick Start
+
 Step 1: Install Python
 Download and install Python 3.7+ from [python.org](https://www.python.org/)
 Step 2: Install Required Package
