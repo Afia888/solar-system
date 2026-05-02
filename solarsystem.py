@@ -37,12 +37,11 @@ def init():
 
     glEnable(GL_COLOR_MATERIAL)
 
-    # stars - চারপাশে ছড়িয়ে (সামনে, পেছনে, বামে, ডানে, উপরে, নিচে)
-    for _ in range(2000):  # 2000 টা তারা
+    for _ in range(2000):  
         stars.append((
-            random.uniform(-25, 25),   # X অক্ষ - বাম থেকে ডানে
-            random.uniform(-15, 15),   # Y অক্ষ - নিচে থেকে উপরে
-            random.uniform(-30, 15)    # Z অক্ষ - পেছনে থেকে সামনে
+            random.uniform(-25, 25), 
+            random.uniform(-15, 15),   
+            random.uniform(-30, 15)   
         ))
 
     # asteroid belt
@@ -60,10 +59,9 @@ def reshape(w, h):
 
 def drawStars():
     glDisable(GL_LIGHTING)
-    glPointSize(1.5)  # ছোট বিন্দু, বেশি তারা দেখাবে
+    glPointSize(1.5) 
     glBegin(GL_POINTS)
     for s in stars:
-        # এলোমেলো উজ্জ্বলতা
         brightness = random.uniform(0.4, 1.0)
         glColor3f(brightness, brightness, brightness)
         glVertex3f(s[0], s[1], s[2])
@@ -137,7 +135,6 @@ def display():
 
         # self rotation
         glRotatef(angle * 5, 0, 1, 0)
-
         drawPlanet(p[1], p[3])
 
         if p[0] == "Saturn":
